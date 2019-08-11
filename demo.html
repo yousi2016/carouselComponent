@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			/*带左右按钮的焦点图*/
+			.dys_box{
+				position: relative;
+				width: 1100px;
+				height: 175px;
+				margin:0px auto;
+				overflow: hidden;
+				margin-bottom:50px;
+				zoom:1;
+			}
+			#dys_box_sul{
+				position: absolute;
+				height: 175px;
+				left: 0;
+			}
+			#dys_box_sul li{
+				float: left;
+				position: relative;
+				width: 260px;
+				height: 175px;
+				margin-right: 20px;
+				display: inline;
+				background: green;
+				color: #fff;
+				font-size: 60px;
+				line-height: 175px;
+				text-align: center;
+			}
+			.dys_demo{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 33px;
+				line-height: 33px;
+				text-align: center;
+				background-color: rgba(0,0,0,0.5);/* IE9、标准浏览器、IE6和部分IE7内核的浏览器(如QQ浏览器)会读懂 */
+			}
+			/* 只支持IE6、7、8 */
+			@media \0screen\,screen\9 {
+				.dys_demo{
+					background-color: #000;
+					filter: Alpha(opacity=50);
+					*zoom:1;/* 激活IE6、7的haslayout属性，让它读懂Alpha */
+				}
+				.dys_demo p{
+					position: relative;/* 设置子元素为相对定位，可让子元素不继承Alpha值 */
+				}
+			}
+			.dys_demo p a{
+				color: #fff;
+			}
+			
+			
+			.l_btn{
+				position: absolute;
+				left: 0;
+				top: 50%;
+				width: 42px;
+				height: 70px;
+				margin-top: -35px;
+				background: url(http://www.gov.cn/govweb/xhtml/2016gov/images/public/index_btn01.png) 0 0 no-repeat;
+			}
+			.r_btn{
+				position: absolute;
+				right: 0;
+				top: 50%;
+				width: 42px;
+				height: 70px;
+				margin-top: -35px;
+				background: url(http://www.gov.cn/govweb/xhtml/2016gov/images/public/index_btn02.png) 0 0 no-repeat;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="dys_box">
+            <ul id="dys_box_sul">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+            </ul>
+			<a href="javascript:;" class="l_btn" ></a>
+			<a href="javascript:;" class="r_btn" ></a>
+		</div>
+		<script src="js/scroll.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			
+			//实例化对象
+			var slideInstanceObject = new Slide({
+				
+				//容器
+				dysBox:'.dys_box',
+				
+				//是否自动滚动
+				autoScroll:false,
+				
+				//上一个
+				prevBtn:'.l_btn',
+				
+				//下一个
+				nextBtn:'.r_btn',
+				
+			});
+			
+		</script>
+	</body>
+</html>
